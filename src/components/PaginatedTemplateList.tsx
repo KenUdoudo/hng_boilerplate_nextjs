@@ -28,31 +28,25 @@ const PaginatedTemplateList: FC<PaginatedTemplateListProperties> = ({
   return (
     <div className="w-full">
       <table className="min-w-full rounded bg-white shadow">
-        <thead>
-          <tr className="bg-gray-100 text-gray-600">
-            <th className="px-4 py-2 text-left">Template</th>
-            <th className="px-4 py-2 text-right">Actions</th>
-          </tr>
-        </thead>
         <tbody>
           {currentTemplates.map((template) => (
             <tr key={template.id} className="border-b hover:bg-gray-50">
-              <td className="flex items-center px-4 py-2">
+              <td className="flex items-center px-[24px] py-[20px]">
                 <img
                   src={template.thumbnail}
                   alt={template.name}
-                  className="mr-4 h-12 w-12"
+                  className="mr-[21px] h-[120px] w-[120px] rounded-[8px] border-[1px]"
                 />
                 {template.name}
               </td>
               <td className="px-4 py-2 text-right">
                 <button
-                  className="mr-2 text-blue-500"
+                  className="mr-[32px] text-[12px]"
                   onClick={() => onPreview(template)}
                 >
                   Preview
                 </button>
-                <button className="text-gray-600">Edit</button>
+                <button className="text-[12px]">Edit</button>
               </td>
             </tr>
           ))}
@@ -67,7 +61,7 @@ const PaginatedTemplateList: FC<PaginatedTemplateListProperties> = ({
           <button
             key={number + 1}
             onClick={() => paginate(number + 1)}
-            className={`rounded px-4 py-2 ${currentPage === number + 1 ? "bg-orange-500 text-white" : "bg-gray-300"}`}
+            className={`h-[36px] w-[35px] rounded text-center ${currentPage === number + 1 ? "border-[1px] border-[#F97316] bg-[#FFECE5]" : "bg-white"}`}
           >
             {number + 1}
           </button>

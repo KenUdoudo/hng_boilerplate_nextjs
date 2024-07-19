@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { LuChevronRight } from "react-icons/lu";
 
 import PaginatedTemplateList from "../components/PaginatedTemplateList";
 import TemplatePreview from "../components/TemplatePreview";
@@ -44,10 +43,13 @@ export default function Home() {
   const [selectedTemplate, setSelectedTemplate] = useState<Template | null>(
     null,
   );
-  const [activeTab, setActiveTab] = useState<"manage" | "new">("new");
+  const [activeTab, setActiveTab] = useState<"new" | "manage">("manage");
+  const handlePreview = (template: Template) => {
+    setSelectedTemplate(prevTemplate => prevTemplate?.id === template.id ? null : template);
+  };
 
   return (
-    <div className="p-8">
+    <div className="pr-[40px] pl-[286px]">
       <nav className="mb-[24px] rounded-[9px] border-[1px]">
         <button
           className={`border-r-[1px] px-[14px] py-[16px] text-[14px] ${activeTab === "manage" ? "text-[#F97316]" : "text-gray-[#8e8e93]"}`}
@@ -74,7 +76,7 @@ export default function Home() {
         <p>></p>
         <p className="text-[12px] font-normal text-[#525252]">New Template</p>
         <p>></p>
-        <p className="text-[12px] font-normal text-[#525252]">
+        <p className="text-[12px] font-normal text-[#6a6a6a86]">
           Edit In-built Template
         </p>
       </div>
@@ -83,7 +85,7 @@ export default function Home() {
         <div className="flex space-x-4">
           <PaginatedTemplateList
             templates={templates}
-            onPreview={setSelectedTemplate}
+            onPreview={handlePreview}
           />
           {selectedTemplate && <TemplatePreview template={selectedTemplate} />}
         </div>
