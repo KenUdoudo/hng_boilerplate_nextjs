@@ -1,3 +1,5 @@
+"use client";
+
 import { FC } from "react";
 
 import { Template } from "../app/index";

@@ -1,3 +1,4 @@
+"use client";
 import { useState } from 'react';
 import PaginatedTemplateList from '../components/PaginatedTemplateList';
 import TemplatePreview from '../components/TemplatePreview';
