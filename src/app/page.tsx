@@ -15,29 +15,29 @@ const templates: Template[] = [
 
 export default function Home() {
   const [selectedTemplate, setSelectedTemplate] = useState<Template | null>(null);
-  const [activeTab, setActiveTab] = useState<'new' | 'manage'>('manage');
+  const [activeTab, setActiveTab] = useState<'manage' | 'new'>('new');
 
   return (
     <div className="p-8">
-      <nav className="mb-4">
+      <nav className="mb-[24px] border-[1px] rounded-[9px]">
         <button
-          className={`px-4 py-2 rounded ${activeTab === 'new' ? 'bg-orange-500 text-white' : 'bg-gray-300'}`}
-          onClick={() => setActiveTab('new')}
+          className={`px-[14px] py-[16px] text-[14px] border-r-[1px] ${activeTab === 'manage' ? 'text-[#F97316]' : 'text-gray-[#8e8e93]'}`}
+          onClick={() => setActiveTab('manage')}
         >
           New Template
         </button>
         <button
-          className={`px-4 py-2 rounded ${activeTab === 'manage' ? 'bg-orange-500 text-white' : 'bg-gray-300'}`}
-          onClick={() => setActiveTab('manage')}
+          className={`px-[14px] py-[16px] text-[14px] border-l-[1px] ${activeTab === 'new' ? 'text-[#F97316]' : 'text-gray-[#8e8e93]'}`}
+          onClick={() => setActiveTab('new')}
         >
           Manage Templates
         </button>
       </nav>
 
-      <h1 className="text-2xl font-bold mb-2">Choose In-built Template</h1>
-      <p className="mb-4">Explore our library of custom templates.</p>
+      <h1 className="text-[24px] font-bold mb-[12px] text-[#0A0A0A]">Choose In-built Template</h1>
+      <p className="font-normal mb-[24px] text-[#0A0A0A]">Explore our library of custom templates.</p>
       <div className="mb-4">
-        <span className="text-gray-600">Email > New Template > Edit In-built Template</span>
+        <p className='text-[12px] font-normal'><span className="text-[#525252]">Email > New Template > Edit In-built Template</span></p>
       </div>
 
       {activeTab === 'manage' && (
