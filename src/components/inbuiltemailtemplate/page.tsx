@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 
-import PaginatedTemplateList from "../components/PaginatedTemplateList";
-import TemplatePreview from "../components/TemplatePreview";
+import PaginatedTemplateList from "./PaginatedTemplateList";
+import TemplatePreview from "./TemplatePreview";
 import { Template } from "./index";
 
 const templates: Template[] = [
