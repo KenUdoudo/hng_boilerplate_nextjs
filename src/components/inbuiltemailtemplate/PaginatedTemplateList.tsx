@@ -2,7 +2,7 @@
 
 import { FC, useState } from "react";
 
-import { Template } from "../app/index";
+import { Template } from "../../app/index";
 
 interface PaginatedTemplateListProperties {
   templates: Template[];

@@ -2,7 +2,7 @@
 
 import { FC } from "react";
 
-import { Template } from "../app/index";
+import { Template } from "../../app/index";
 
 interface TemplatePreviewProperties {
   template: Template;
