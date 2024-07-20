@@ -39,7 +39,7 @@ const templates: Template[] = [
   },
 ];
 
-export default function Home() {
+export default function InBuilt() {
   const [selectedTemplate, setSelectedTemplate] = useState<Template | null>(
     null,
   );

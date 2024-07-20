@@ -30,7 +30,7 @@ const PaginatedTemplateList: FC<PaginatedTemplateListProperties> = ({
       <table className="min-w-full rounded bg-white shadow">
         <tbody>
           {currentTemplates.map((template) => (
-            <tr key={template.id} className="border-b hover:bg-gray-50">
+            <tr key={template.id} className="border-b hover:bg-[#f8f8f8]">
               <td className="flex items-center px-[24px] py-[20px]">
                 <img
                   src={template.thumbnail}
